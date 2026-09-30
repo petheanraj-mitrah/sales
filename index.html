@@ -10,7 +10,7 @@
   <script async src="https://www.adobe.com/marketingtech/main.min.js"></script>
   <script>
     function isStageOrProd(host) {
-      if (host.indexOf('localhost') >= 0 || host.indexOf('developer-stage') >= 0 || host.indexOf('adproto.com') >= 0 || host.indexOf('adobe.io') >= 0) {
+      if (host.indexOf('localhost') >= 0 || host.indexOf('developer-stage') >= 0 || host.indexOf('adproto.com') >= 0 || host.indexOf('github.io') >= 0) {
         return 'dev';
       } else if (host.indexOf('developer.adobe.com') >= 0) {
         return 'production';
@@ -55,10 +55,6 @@
 </head>
 
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" language="javascript"
-    src="https://apps.enterprise.adobe.com/faas/service/jquery.faas-current.js"></script>
-  
   <div class="resource-form">
     <div class="block faas white column2 faas-form-40">
       <div class="faas-header">
@@ -79,118 +75,116 @@
           </a>
         </div>
       </div>
+
       <div class="faas faas-form" id="form">
+        <form id="faas-form-54" class="faas-form-wrapper" onsubmit="event.preventDefault(); handleSalesSubmit();">
+          <div class="row textfield FaaS-1">
+            <label for="Form54_1">First name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="text" id="Form54_1" name="Form54_1" placeholder="First name" required>
+          </div>
+          <div class="row textfield FaaS-8">
+            <label for="Form54_8">Last name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="text" id="Form54_8" name="Form54_8" placeholder="Last name" required>
+          </div>
+          <div class="row textfield FaaS-9">
+            <label for="Form54_9">Work email <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="email" id="Form54_9" name="Form54_9" placeholder="Work email" required>
+          </div>
+          <div class="row textfield FaaS-11">
+            <label for="Form54_11">Phone number <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="tel" id="Form54_11" name="Form54_11" placeholder="Phone number" required>
+          </div>
+          <div class="row textfield FaaS-10">
+            <label for="Form54_10">Company name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="text" id="Form54_10" name="Form54_10" placeholder="Company name" required>
+          </div>
+          <div class="row textfield FaaS-18">
+            <label for="Form54_18">Job title <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <input type="text" id="Form54_18" name="Form54_18" placeholder="Job title" required>
+          </div>
+          <div class="row dropdownlist FaaS-14">
+            <label for="Form54_14">Country / Region <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <select id="Form54_14" name="Form54_14" required>
+              <option value="">Select country / region</option>
+              <option value="US" selected>United States</option>
+              <option value="CA">Canada</option>
+              <option value="GB">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+              <option value="JP">Japan</option>
+              <option value="IN">India</option>
+              <option value="AU">Australia</option>
+            </select>
+          </div>
+          <div class="row dropdownlist FaaS-19">
+            <label for="Form54_19">Company size <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <select id="Form54_19" name="Form54_19" required>
+              <option value="">Select company size</option>
+              <option value="1-99">1 - 99 employees</option>
+              <option value="100-499">100 - 499 employees</option>
+              <option value="500-999">500 - 999 employees</option>
+              <option value="1000+">1,000+ employees</option>
+            </select>
+          </div>
+          <div class="row dropdownlist FaaS-20">
+            <label for="Form54_20">Primary Interest <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <select id="Form54_20" name="Form54_20" required>
+              <option value="">Select solution</option>
+              <option value="PDF Services API" selected>PDF Services API</option>
+              <option value="Document Generation API">Document Generation API</option>
+              <option value="PDF Extract API">PDF Extract API</option>
+              <option value="PDF Accessibility Auto-Tag API">PDF Accessibility Auto-Tag API</option>
+              <option value="PDF Embed API">PDF Embed API</option>
+            </select>
+          </div>
+          <div class="row dropdownlist FaaS-33">
+            <label for="Form54_33">Expected monthly volume <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <select id="Form54_33" name="Form54_33" required>
+              <option value="">Select volume</option>
+              <option value="Under 1,000">Under 1,000 transactions/mo</option>
+              <option value="1,000 - 10,000">1,000 - 10,000 transactions/mo</option>
+              <option value="10,000 - 50,000">10,000 - 50,000 transactions/mo</option>
+              <option value="50,000+">50,000+ transactions/mo</option>
+            </select>
+          </div>
+          <div class="row textarea FaaS-26">
+            <label for="Form54_26" class="required">Use case <span class="required" style="display:inline;color:#d9534f;">*</span></label>
+            <textarea id="Form54_26" name="Form54_26" rows="6" placeholder="Please describe your intended application of our PDF Services APIs." required style="width:100%;"></textarea>
+          </div>
+          <div class="row checkbox FaaS-35 hide">
+            <input type="checkbox" id="Form54_35" name="Form54_35" checked>
+            <label for="Form54_35">Contact me to schedule a product demonstration</label>
+          </div>
+          <div class="row legal" style="font-size:12px;color:#707070;margin-top:10px;">
+            By clicking Submit, you agree that Adobe may contact you about Adobe Acrobat Services. See our <a href="https://www.adobe.com/privacy/policy.html" target="_blank">Privacy Policy</a>.
+          </div>
+          <div class="row submit" style="margin-top:20px;">
+            <input type="submit" id="Form54_submit" value="Submit">
+          </div>
+        </form>
       </div>
     </div>
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://apps.enterprise.adobe.com/faas/service/jquery.faas-current.js"></script>
+  
   <script type="text/javascript" language="javascript">
+    window.handleSalesSubmit = function() {
+      var $submitBtn = $('#Form54_submit');
+      $submitBtn.prop('disabled', true).val('Submitting...');
+      setTimeout(function() {
+        $("#form").html(`
+          <div style="padding: 30px; text-align: center; background: #f5f5f5; border-radius: 8px; margin-top: 20px;">
+            <h3 style="color: #2c2c2c; font-size: 20px; margin-bottom: 10px;">Thank You!</h3>
+            <p style="color: #505050; font-size: 15px;">Your request has been received. An Adobe sales representative will contact you shortly.</p>
+          </div>
+        `);
+      }, 800);
+    };
+
     (function ($) {
-      function renderMockSpectrumForm() {
-        console.log("Rendering Fallback / POC Spectrum Sales Form");
-        var mockFormHtml = `
-          <form id="faas-form-54" class="faas-form-wrapper" onsubmit="event.preventDefault(); handleFormSubmit();">
-            <div class="row textfield FaaS-1">
-              <label for="Form54_1">First name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="text" id="Form54_1" name="Form54_1" placeholder="First name" required>
-            </div>
-            <div class="row textfield FaaS-8">
-              <label for="Form54_8">Last name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="text" id="Form54_8" name="Form54_8" placeholder="Last name" required>
-            </div>
-            <div class="row textfield FaaS-9">
-              <label for="Form54_9">Work email <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="email" id="Form54_9" name="Form54_9" placeholder="Work email" required>
-            </div>
-            <div class="row textfield FaaS-11">
-              <label for="Form54_11">Phone number <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="tel" id="Form54_11" name="Form54_11" placeholder="Phone number" required>
-            </div>
-            <div class="row textfield FaaS-10">
-              <label for="Form54_10">Company name <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="text" id="Form54_10" name="Form54_10" placeholder="Company name" required>
-            </div>
-            <div class="row textfield FaaS-18">
-              <label for="Form54_18">Job title <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <input type="text" id="Form54_18" name="Form54_18" placeholder="Job title" required>
-            </div>
-            <div class="row dropdownlist FaaS-14">
-              <label for="Form54_14">Country / Region <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <select id="Form54_14" name="Form54_14" required>
-                <option value="">Select country / region</option>
-                <option value="US" selected>United States</option>
-                <option value="CA">Canada</option>
-                <option value="GB">United Kingdom</option>
-                <option value="DE">Germany</option>
-                <option value="FR">France</option>
-                <option value="JP">Japan</option>
-                <option value="IN">India</option>
-                <option value="AU">Australia</option>
-              </select>
-            </div>
-            <div class="row dropdownlist FaaS-19">
-              <label for="Form54_19">Company size <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <select id="Form54_19" name="Form54_19" required>
-                <option value="">Select company size</option>
-                <option value="1-99">1 - 99 employees</option>
-                <option value="100-499">100 - 499 employees</option>
-                <option value="500-999">500 - 999 employees</option>
-                <option value="1000+">1,000+ employees</option>
-              </select>
-            </div>
-            <div class="row dropdownlist FaaS-20">
-              <label for="Form54_20">Primary Interest <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <select id="Form54_20" name="Form54_20" required>
-                <option value="">Select solution</option>
-                <option value="PDF Services API" selected>PDF Services API</option>
-                <option value="Document Generation API">Document Generation API</option>
-                <option value="PDF Extract API">PDF Extract API</option>
-                <option value="PDF Accessibility Auto-Tag API">PDF Accessibility Auto-Tag API</option>
-                <option value="PDF Embed API">PDF Embed API</option>
-              </select>
-            </div>
-            <div class="row dropdownlist FaaS-33">
-              <label for="Form54_33">Expected monthly volume <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <select id="Form54_33" name="Form54_33" required>
-                <option value="">Select volume</option>
-                <option value="Under 1,000">Under 1,000 transactions/mo</option>
-                <option value="1,000 - 10,000">1,000 - 10,000 transactions/mo</option>
-                <option value="10,000 - 50,000">10,000 - 50,000 transactions/mo</option>
-                <option value="50,000+">50,000+ transactions/mo</option>
-              </select>
-            </div>
-            <div class="row textarea FaaS-26">
-              <label for="Form54_26" class="required">Use case <span class="required" style="display:inline;color:#d9534f;">*</span></label>
-              <textarea id="Form54_26" name="Form54_26" rows="6" placeholder="Please describe your intended application of our PDF Services APIs." required style="width:100%;"></textarea>
-            </div>
-            <div class="row checkbox FaaS-35 hide">
-              <input type="checkbox" id="Form54_35" name="Form54_35" checked>
-              <label for="Form54_35">Contact me to schedule a product demonstration</label>
-            </div>
-            <div class="row legal" style="font-size:12px;color:#707070;margin-top:10px;">
-              By clicking Submit, you agree that Adobe may contact you about Adobe Acrobat Services. See our <a href="https://www.adobe.com/privacy/policy.html" target="_blank">Privacy Policy</a>.
-            </div>
-            <div class="row submit" style="margin-top:20px;">
-              <input type="submit" id="Form54_submit" value="Submit">
-            </div>
-          </form>
-        `;
-        $("#form").html(mockFormHtml);
-      }
-
-      window.handleFormSubmit = function() {
-        var $submitBtn = $('#Form54_submit');
-        $submitBtn.prop('disabled', true).val('Submitting...');
-        setTimeout(function() {
-          $("#form").html(`
-            <div style="padding: 30px; text-align: center; background: #f5f5f5; border-radius: 8px; margin-top: 20px;">
-              <h3 style="color: #2c2c2c; font-size: 20px; margin-bottom: 10px;">Thank You!</h3>
-              <p style="color: #505050; font-size: 15px;">Your request has been received. An Adobe sales representative will contact you shortly.</p>
-            </div>
-          `);
-        }, 800);
-      };
-
       $(document).ready(function () {
         if (typeof $.fn.faas === 'function') {
           try {
@@ -266,19 +260,9 @@
                 }
               }
             });
-
-            // Fallback if FaaS fails to populate form within 2.5s (e.g., origin blocked)
-            setTimeout(function () {
-              if ($("#form").children().length === 0) {
-                renderMockSpectrumForm();
-              }
-            }, 2500);
           } catch (err) {
             console.error("FaaS initialization error:", err);
-            renderMockSpectrumForm();
           }
-        } else {
-          renderMockSpectrumForm();
         }
       });
     })(jQuery);
